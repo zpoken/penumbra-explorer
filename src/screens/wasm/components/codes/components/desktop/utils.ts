@@ -4,36 +4,39 @@ export const columns:{
   width: number;
 }[] = [
   {
-    key: 'contractName',
-    width: 20,
+    key: 'id',
+    width: 5,
+  },
+  {
+    key: 'verified',
+    width: 5,
+    align: 'center',
   },
   {
     key: 'contract',
     width: 10,
   },
   {
-    key: 'contractAddress',
-    width: 5,
-  },
-  {
     key: 'hash',
-    width: 5,
+    width: 20,
   },
   {
     key: 'creator',
-    width: 5,
+    width: 20,
   },
   {
-    key: 'executes',
-    width: 5,
+    key: 'version',
+    width: 10,
+    align: 'center',
+  },
+  {
+    key: 'instantiates',
+    width: 10,
     align: 'right',
   },
   {
-    key: 'initiatedAt',
-    width: 15,
-  },
-  {
-    key: 'lastExecuted',
-    width: 15,
+    key: 'createdAt',
+    width: 20,
+    align: 'right',
   },
 ];

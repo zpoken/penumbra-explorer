@@ -56,8 +56,7 @@ const Contracts: React.FC<{
   } else if (!items.length) {
     component = <NoData />;
   } else if (isDesktop) {
-    // component = <Desktop items={items} />;
-    component = <Mobile items={items} />;
+    component = <Desktop items={items} />;
   } else {
     component = <Mobile items={items} />;
   }

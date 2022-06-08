@@ -31,9 +31,11 @@ export const columns:{
   {
     key: 'initiatedAt',
     width: 15,
+    align: 'right',
   },
   {
     key: 'lastExecuted',
     width: 15,
+    align: 'right',
   },
 ];

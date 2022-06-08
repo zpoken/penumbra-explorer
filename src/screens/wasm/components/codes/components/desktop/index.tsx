@@ -19,6 +19,7 @@ import { useRecoilValue } from 'recoil';
 import { readDate } from '@recoil/settings';
 import { columns } from './utils';
 import { ItemType } from '../../types';
+import { Verified } from '..';
 
 const Desktop: React.FC<{
   className?: string;
@@ -31,32 +32,26 @@ const Desktop: React.FC<{
   const dateFormat = useRecoilValue(readDate);
   const formattedItems = items.map((x) => {
     return ({
-      contractName: x.name,
-      contract: x.contract,
-      contractAddress: (
-        <AvatarName
-          name={getMiddleEllipsis(x.contractAddress, {
-            beginning: 10, ending: 5,
-          })}
-          address={x.contractAddress}
-          href={WASM_DETAILS}
-        />
+      verified: (
+        <Verified verified={x.verified} />
       ),
+      id: x.id,
+      contract: x.contract,
       hash: getMiddleEllipsis(x.hash, {
-        beginning: 7, ending: 7,
+        beginning: 15, ending: 15,
       }),
       creator: (
         <AvatarName
           name={getMiddleEllipsis(x.creator.address, {
-            beginning: 10, ending: 5,
+            beginning: 10, ending: 15,
           })}
           address={x.creator.address}
           imageUrl={x.creator.imageUrl}
         />
       ),
-      executes: numeral(x.executes).format('0,0'),
-      initiatedAt: formatDayJs(dayjs.utc(x.createdAt), dateFormat),
-      lastExecuted: formatDayJs(dayjs.utc(x.lastExecuted), dateFormat),
+      version: x.version,
+      instantiates: numeral(x.instantiates).format('0,0'),
+      createdAt: formatDayJs(dayjs.utc(x.createdAt), dateFormat),
     });
   });
 
