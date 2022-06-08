@@ -5,7 +5,7 @@ export const columns:{
 }[] = [
   {
     key: 'contractName',
-    width: 20,
+    width: 15,
   },
   {
     key: 'contract',
@@ -30,12 +30,12 @@ export const columns:{
   },
   {
     key: 'initiatedAt',
-    width: 15,
+    width: 17,
     align: 'right',
   },
   {
     key: 'lastExecuted',
-    width: 15,
+    width: 18,
     align: 'right',
   },
 ];

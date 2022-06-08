@@ -7,6 +7,8 @@ import {
   Divider,
   Typography,
 } from '@material-ui/core';
+import Link from 'next/link';
+import { TRANSACTION_DETAILS } from '@utils/go_to_page';
 import { AvatarName } from '@components';
 import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
 import { useRecoilValue } from 'recoil';
@@ -59,9 +61,11 @@ const Mobile: React.FC<{
                 <Typography variant="h4" className="label">
                   {t('hash')}
                 </Typography>
-                <Typography variant="body1" className="value">
-                  {x.hash}
-                </Typography>
+                <Link href={TRANSACTION_DETAILS(x.hash)} passHref>
+                  <Typography variant="body1" className="value" component="a">
+                    {x.hash}
+                  </Typography>
+                </Link>
               </div>
               <div className={classes.item}>
                 <Typography variant="h4" className="label">

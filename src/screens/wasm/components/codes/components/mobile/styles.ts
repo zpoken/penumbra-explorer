@@ -19,6 +19,7 @@ export const useStyles = () => {
           },
           '& a': {
             color: theme.palette.custom.fonts.highlight,
+            wordBreak: 'break-all',
           },
         },
         flex: {

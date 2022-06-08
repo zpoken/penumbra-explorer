@@ -3,18 +3,20 @@ import classnames from 'classnames';
 import useTranslation from 'next-translate/useTranslation';
 import dayjs, { formatDayJs } from '@utils/dayjs';
 import numeral from 'numeral';
+import Link from 'next/link';
 import {
   Table,
   TableHead,
   TableRow,
   TableCell,
   TableBody,
+  Typography,
 } from '@material-ui/core';
 import {
   AvatarName,
 } from '@components';
 import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
-import { WASM_DETAILS } from '@utils/go_to_page';
+import { TRANSACTION_DETAILS } from '@utils/go_to_page';
 import { useRecoilValue } from 'recoil';
 import { readDate } from '@recoil/settings';
 import { columns } from './utils';
@@ -37,9 +39,15 @@ const Desktop: React.FC<{
       ),
       id: x.id,
       contract: x.contract,
-      hash: getMiddleEllipsis(x.hash, {
-        beginning: 15, ending: 15,
-      }),
+      hash: (
+        <Link href={TRANSACTION_DETAILS(x.hash)} passHref>
+          <Typography variant="body1" className="value" component="a">
+            {getMiddleEllipsis(x.hash, {
+              beginning: 15, ending: 15,
+            })}
+          </Typography>
+        </Link>
+      ),
       creator: (
         <AvatarName
           name={getMiddleEllipsis(x.creator.address, {

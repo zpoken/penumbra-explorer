@@ -8,8 +8,12 @@ import {
   Typography,
 } from '@material-ui/core';
 import { AvatarName } from '@components';
+import Link from 'next/link';
 import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
-import { WASM_DETAILS } from '@utils/go_to_page';
+import {
+  WASM_DETAILS,
+  TRANSACTION_DETAILS,
+} from '@utils/go_to_page';
 import { useRecoilValue } from 'recoil';
 import { readDate } from '@recoil/settings';
 import { useStyles } from './styles';
@@ -63,9 +67,11 @@ const Mobile: React.FC<{
                 <Typography variant="h4" className="label">
                   {t('hash')}
                 </Typography>
-                <Typography variant="body1" className="value">
-                  {x.hash}
-                </Typography>
+                <Link href={TRANSACTION_DETAILS(x.hash)} passHref>
+                  <Typography variant="body1" className="value" component="a">
+                    {x.hash}
+                  </Typography>
+                </Link>
               </div>
               <div className={classes.item}>
                 <Typography variant="h4" className="label">
