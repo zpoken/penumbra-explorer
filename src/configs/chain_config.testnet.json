@@ -24,6 +24,6 @@
   },
   "extra": {
     "profile": true,
-    "cosmwasm": true
+    "cosmwasm": false
   }
 }
