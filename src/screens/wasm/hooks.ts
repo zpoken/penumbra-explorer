@@ -3,7 +3,9 @@ import {
 } from 'react';
 import * as R from 'ramda';
 import { WasmState } from './types';
-import { fakeContracts } from './fakeData';
+import {
+  fakeContracts, fakeCodes,
+} from './fakeData';
 
 const itemDefault = {
   data: {},
@@ -18,18 +20,25 @@ export const useWasm = () => {
     loading: true,
     exists: true,
     contracts: itemDefault,
+    codes: itemDefault,
   });
 
   // preload fake data
   useEffect(() => {
-    const paginatedData = createPagination(fakeContracts);
+    const paginatedContracts = createPagination(fakeContracts);
+    const paginatedCodes = createPagination(fakeCodes);
 
     handleSetState({
       loading: false,
       contracts: {
         count: fakeContracts.length,
         loading: false,
-        data: paginatedData,
+        data: paginatedContracts,
+      },
+      codes: {
+        count: fakeCodes.length,
+        loading: false,
+        data: paginatedCodes,
       },
     });
   }, []);

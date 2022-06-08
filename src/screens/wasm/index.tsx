@@ -5,7 +5,9 @@ import {
   LoadAndExist,
 } from '@components';
 import { useWasm } from './hooks';
-import { Contracts } from './components';
+import {
+  Contracts, Codes,
+} from './components';
 import { useStyles } from './styles';
 
 const Wasm = () => {
@@ -20,6 +22,7 @@ const Wasm = () => {
           exists={state.exists}
         >
           <Contracts contracts={state.contracts} />
+          <Codes codes={state.codes} />
         </LoadAndExist>
       </Layout>
     </>

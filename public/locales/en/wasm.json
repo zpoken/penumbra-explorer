@@ -8,5 +8,11 @@
   "creator": "Creator",
   "executes": "Executes",
   "initiatedAt": "Initiated At",
-  "lastExecuted": "Last Executed"
+  "lastExecuted": "Last Executed",
+  "verified": "Verified",
+  "id": "ID",
+  "version": "Version",
+  "instantiates": "Instantiates",
+  "createdAt": "Created At",
+  "codes": "Codes"
 }
