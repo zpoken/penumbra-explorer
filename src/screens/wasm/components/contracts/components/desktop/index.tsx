@@ -17,7 +17,7 @@ import {
 } from '@components';
 import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
 import {
-  WASM_DETAILS,
+  WASM_CONTRACT_DETAILS,
   TRANSACTION_DETAILS,
 } from '@utils/go_to_page';
 import { useRecoilValue } from 'recoil';
@@ -36,7 +36,13 @@ const Desktop: React.FC<{
   const dateFormat = useRecoilValue(readDate);
   const formattedItems = items.map((x) => {
     return ({
-      contractName: x.name,
+      contractName: (
+        <Link href={WASM_CONTRACT_DETAILS(x.contractAddress)} passHref>
+          <Typography variant="body1" className="value" component="a">
+            {x.name}
+          </Typography>
+        </Link>
+      ),
       contract: x.contract,
       contractAddress: (
         <AvatarName
@@ -44,7 +50,7 @@ const Desktop: React.FC<{
             beginning: 10, ending: 5,
           })}
           address={x.contractAddress}
-          href={WASM_DETAILS}
+          href={WASM_CONTRACT_DETAILS}
         />
       ),
       hash: (

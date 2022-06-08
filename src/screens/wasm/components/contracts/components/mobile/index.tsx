@@ -11,7 +11,7 @@ import { AvatarName } from '@components';
 import Link from 'next/link';
 import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
 import {
-  WASM_DETAILS,
+  WASM_CONTRACT_DETAILS,
   TRANSACTION_DETAILS,
 } from '@utils/go_to_page';
 import { useRecoilValue } from 'recoil';
@@ -39,9 +39,11 @@ const Mobile: React.FC<{
                 <Typography variant="h4" className="label">
                   {t('contractName')}
                 </Typography>
-                <Typography variant="body1" className="value">
-                  {x.name}
-                </Typography>
+                <Link href={WASM_CONTRACT_DETAILS(x.contractAddress)} passHref>
+                  <Typography variant="body1" className="value" component="a">
+                    {x.name}
+                  </Typography>
+                </Link>
               </div>
               <div className={classes.item}>
                 <Typography variant="h4" className="label">
@@ -60,7 +62,7 @@ const Mobile: React.FC<{
                     beginning: 15, ending: 5,
                   })}
                   address={x.contractAddress}
-                  href={WASM_DETAILS}
+                  href={WASM_CONTRACT_DETAILS}
                 />
               </div>
               <div className={classes.item}>

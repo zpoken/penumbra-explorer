@@ -3,6 +3,7 @@ export type ContractType = {
   contract: string;
   contractAddress: string;
   hash: string;
+  creator: string;
   executes: number;
   createdAt: string;
   lastExecuted: string;

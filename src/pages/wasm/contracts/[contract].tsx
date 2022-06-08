@@ -1,4 +1,4 @@
-import WasmDetails from '@screens/wasm_details';
+import WasmDetails from '@screens/wasm_contract_details';
 import NotFound from '@screens/404';
 import { chainConfig } from '@configs';
 
