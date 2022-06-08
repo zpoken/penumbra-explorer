@@ -4,17 +4,36 @@ export const columns:{
   width: number;
 }[] = [
   {
-    key: 'validator',
-    width: 25,
+    key: 'contractName',
+    width: 20,
   },
   {
-    key: 'amount',
-    width: 25,
+    key: 'contract',
+    width: 10,
+  },
+  {
+    key: 'contractAddress',
+    width: 5,
+  },
+  {
+    key: 'hash',
+    width: 5,
+  },
+  {
+    key: 'creator',
+    width: 5,
+  },
+  {
+    key: 'executes',
+    width: 5,
     align: 'right',
   },
   {
-    key: 'reward',
-    width: 25,
-    align: 'right',
+    key: 'initiatedAt',
+    width: 15,
+  },
+  {
+    key: 'lastExecuted',
+    width: 15,
   },
 ];

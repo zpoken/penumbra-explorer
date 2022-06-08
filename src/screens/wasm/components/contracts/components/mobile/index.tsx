@@ -8,6 +8,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import { AvatarName } from '@components';
+import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
 import { WASM_DETAILS } from '@utils/go_to_page';
 import { useRecoilValue } from 'recoil';
 import { readDate } from '@recoil/settings';
@@ -51,7 +52,9 @@ const Mobile: React.FC<{
                   {t('contractAddress')}
                 </Typography>
                 <AvatarName
-                  name={x.contractAddress}
+                  name={getMiddleEllipsis(x.contractAddress, {
+                    beginning: 15, ending: 5,
+                  })}
                   address={x.contractAddress}
                   href={WASM_DETAILS}
                 />
@@ -69,7 +72,9 @@ const Mobile: React.FC<{
                   {t('creator')}
                 </Typography>
                 <AvatarName
-                  name={x.creator.name}
+                  name={getMiddleEllipsis(x.creator.address, {
+                    beginning: 15, ending: 5,
+                  })}
                   address={x.creator.address}
                   imageUrl={x.creator.imageUrl}
                 />
@@ -95,7 +100,7 @@ const Mobile: React.FC<{
                   {t('lastExecuted')}
                 </Typography>
                 <Typography variant="body1" className="value">
-                  {formatDayJs(dayjs.utc(x.lastExectured), dateFormat)}
+                  {formatDayJs(dayjs.utc(x.lastExecuted), dateFormat)}
                 </Typography>
               </div>
             </div>

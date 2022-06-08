@@ -2,6 +2,8 @@ import React from 'react';
 import * as R from 'ramda';
 import classnames from 'classnames';
 import dynamic from 'next/dynamic';
+import { Typography } from '@material-ui/core';
+import useTranslation from 'next-translate/useTranslation';
 import {
   usePagination,
   useScreenSize,
@@ -24,6 +26,7 @@ const Mobile = dynamic(() => import('./components/mobile'));
 const Contracts: React.FC<{
   contracts: ContractsType,
 } & ComponentDefault> = (props) => {
+  const { t } = useTranslation('wasm');
   const { isDesktop } = useScreenSize();
   const classes = useStyles();
   const {
@@ -53,14 +56,16 @@ const Contracts: React.FC<{
   } else if (!items.length) {
     component = <NoData />;
   } else if (isDesktop) {
-    // component = <Desktop items={items} />;
-    component = <Mobile items={items} />;
+    component = <Desktop items={items} />;
   } else {
     component = <Mobile items={items} />;
   }
 
   return (
     <Box className={classnames(props.className)}>
+      <Typography className={classes.title} variant="h2">
+        {t('contracts')}
+      </Typography>
       {component}
       <Pagination
         className={classes.paginate}

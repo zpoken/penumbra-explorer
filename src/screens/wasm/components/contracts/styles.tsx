@@ -4,6 +4,9 @@ export const useStyles = () => {
   const styles = makeStyles(
     (theme) => {
       return ({
+        title: {
+          marginBottom: theme.spacing(2),
+        },
         paginate: {
           marginTop: theme.spacing(3),
         },

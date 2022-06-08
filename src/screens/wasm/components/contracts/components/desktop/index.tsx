@@ -1,6 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 import useTranslation from 'next-translate/useTranslation';
+import dayjs, { formatDayJs } from '@utils/dayjs';
+import numeral from 'numeral';
 import {
   Table,
   TableHead,
@@ -11,7 +13,10 @@ import {
 import {
   AvatarName,
 } from '@components';
-import { formatNumber } from '@utils/format_token';
+import { getMiddleEllipsis } from '@utils/get_middle_ellipsis';
+import { WASM_DETAILS } from '@utils/go_to_page';
+import { useRecoilValue } from 'recoil';
+import { readDate } from '@recoil/settings';
 import { columns } from './utils';
 import { ItemType } from '../../types';
 
@@ -22,20 +27,36 @@ const Desktop: React.FC<{
   className,
   items,
 }) => {
-  const { t } = useTranslation('accounts');
+  const { t } = useTranslation('wasm');
+  const dateFormat = useRecoilValue(readDate);
   const formattedItems = items.map((x) => {
-    const amount = formatNumber(x.amount.value, x.amount.exponent);
-    const reward = formatNumber(x.reward.value, x.reward.exponent);
     return ({
-      validator: (
+      contractName: x.name,
+      contract: x.contract,
+      contractAddress: (
         <AvatarName
-          name={x.validator.name}
-          address={x.validator.address}
-          imageUrl={x.validator.imageUrl}
+          name={getMiddleEllipsis(x.contractAddress, {
+            beginning: 10, ending: 5,
+          })}
+          address={x.contractAddress}
+          href={WASM_DETAILS}
         />
       ),
-      amount: `${amount} ${x.amount.displayDenom.toUpperCase()}`,
-      reward: `${reward} ${x.reward.displayDenom.toUpperCase()}`,
+      hash: getMiddleEllipsis(x.hash, {
+        beginning: 7, ending: 7,
+      }),
+      creator: (
+        <AvatarName
+          name={getMiddleEllipsis(x.creator.address, {
+            beginning: 10, ending: 5,
+          })}
+          address={x.creator.address}
+          imageUrl={x.creator.imageUrl}
+        />
+      ),
+      executes: numeral(x.executes).format('0,0'),
+      initiatedAt: formatDayJs(dayjs.utc(x.createdAt), dateFormat),
+      lastExecuted: formatDayJs(dayjs.utc(x.lastExecuted), dateFormat),
     });
   });
 

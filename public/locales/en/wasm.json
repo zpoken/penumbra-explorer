@@ -1,5 +1,6 @@
 {
   "wasmContracts": "Wasm Contracts",
+  "contracts": "Contracts",
   "contractName": "Contract Name",
   "contract": "Contract",
   "contractAddress": "Contract Address",

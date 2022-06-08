@@ -1,6 +1,6 @@
 export const fakeContract = {
-  name: 'Fake Name',
-  contract: 'CW20',
+  name: 'Fake Name Somewhat',
+  contract: 'CW20 Contract',
   contractAddress: 'desmos1vaeuky9hqacenay9nmuualugvv54tdhyt2wsvhnjasx9s946hhmqaq3kh7',
   hash: '67A64103274E1B850E8250860F4CD03D0D286B1C2A039B84DE59BF420B65B215',
   creator: 'desmos1ap3yavgakvez6xxf6sxyud395zhcxp5069mqvh',

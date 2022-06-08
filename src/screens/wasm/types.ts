@@ -5,7 +5,7 @@ export type ContractType = {
   hash: string;
   executes: number;
   createdAt: string;
-  lastExectured: string;
+  lastExecuted: string;
 }
 
 export type DataType<g> = {
