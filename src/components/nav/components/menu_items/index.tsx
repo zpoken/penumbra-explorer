@@ -38,7 +38,7 @@ const MenuItems = () => {
               })}
               component="a"
             >
-              <ListItemIcon>{x.icon}</ListItemIcon>
+              <ListItemIcon className={x.key}>{x.icon}</ListItemIcon>
               <ListItemText primary={t(x.key)} />
             </ListItem>
           </Link>

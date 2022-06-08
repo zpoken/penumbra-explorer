@@ -4,6 +4,8 @@ import TransactionIcon from '@assets/icon-transaction.svg';
 import ProposalsIcon from '@assets/icon-proposals.svg';
 import UserIcon from '@assets/icon-user.svg';
 import ParamIcon from '@assets/icon-param.svg';
+import WasmIcon from '@assets/icon-wasm.svg';
+import { chainConfig } from '@configs';
 import {
   HOME,
   BLOCKS,
@@ -11,6 +13,7 @@ import {
   TRANSACTIONS,
   PROPOSALS,
   PARAMS,
+  WASM,
 } from '@utils/go_to_page';
 
 export const getMenuItems = () => {
@@ -50,5 +53,10 @@ export const getMenuItems = () => {
       url: PARAMS,
       icon: <ParamIcon {...iconProps} />,
     },
+    ...(chainConfig.extra.cosmwasm ? [{
+      key: 'wasm',
+      url: WASM,
+      icon: <WasmIcon {...iconProps} />,
+    }] : []),
   ];
 };

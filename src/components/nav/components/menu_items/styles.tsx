@@ -8,6 +8,12 @@ export const useStyles = () => {
         root: {
           '& .MuiListItemIcon-root': {
             minWidth: '48px',
+            '&.wasm svg': {
+              fill: 'none',
+            },
+            '&.wasm path': {
+              stroke: theme?.palette?.custom.fonts.fontFour,
+            },
           },
           '&.MuiListItem-gutters': {
             padding: theme.spacing(2, 2.5),
@@ -20,6 +26,12 @@ export const useStyles = () => {
             '& .MuiListItemIcon-root': {
               '& svg': {
                 fill: theme?.palette?.primary?.main,
+              },
+              '&.wasm svg': {
+                fill: 'none',
+              },
+              '&.wasm path': {
+                stroke: theme?.palette?.primary?.main,
               },
             },
             '& .MuiListItemText-root': {
