@@ -23,6 +23,7 @@
     }
   },
   "extra": {
-    "profile": true
+    "profile": true,
+    "cosmwasm": true
   }
 }
