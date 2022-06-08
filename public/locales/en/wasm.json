@@ -1,0 +1,11 @@
+{
+  "wasmContracts": "Wasm Contracts",
+  "contractName": "Contract Name",
+  "contract": "Contract",
+  "contractAddress": "Contract Address",
+  "hash": "Hash",
+  "creator": "Creator",
+  "executes": "Executes",
+  "initiatedAt": "Initiated At",
+  "lastExecuted": "Last Executed"
+}
