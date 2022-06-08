@@ -26,7 +26,7 @@ export const useStyles = () => {
             marginBottom: theme.spacing(1),
           },
           '& .detail': {
-            '&.MuiTypography-body1': {
+            '&.MuiTypography-body1, a': {
               wordWrap: 'break-word',
             },
           },

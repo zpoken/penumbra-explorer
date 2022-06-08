@@ -3,6 +3,7 @@ import {
 } from 'react';
 import * as R from 'ramda';
 import { WasmState } from './types';
+import { fakeContract } from './fakeData';
 
 export const useWasmContractDetails = () => {
   const [state, setState] = useState<WasmState>({
@@ -24,6 +25,7 @@ export const useWasmContractDetails = () => {
   useEffect(() => {
     handleSetState({
       loading: false,
+      contract: fakeContract,
     });
   }, []);
 

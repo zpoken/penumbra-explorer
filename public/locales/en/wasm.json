@@ -15,5 +15,6 @@
   "instantiates": "Instantiates",
   "createdAt": "Created At",
   "codes": "Codes",
-  "wasmContractDetails": "Wasm Contract Details"
+  "wasmContractDetails": "Wasm Contract Details",
+  "overview": "Overview"
 }

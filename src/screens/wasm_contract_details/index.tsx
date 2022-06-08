@@ -6,6 +6,7 @@ import {
 } from '@components';
 import { useWasmContractDetails } from './hooks';
 import { useStyles } from './styles';
+import { Overview } from './components';
 
 const Wasm = () => {
   const { t } = useTranslation('wasm');
@@ -18,7 +19,7 @@ const Wasm = () => {
           loading={state.loading}
           exists={state.exists}
         >
-          <div>Hello world</div>
+          <Overview overview={state.contract} />
         </LoadAndExist>
       </Layout>
     </>
