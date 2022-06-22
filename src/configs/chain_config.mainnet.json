@@ -1,14 +1,14 @@
 {
-  "title": "Desmos Block Explorer",
-  "network": "desmos-mainnet-1",
-  "icon": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/icon.svg?sanitize=true",
+  "title": "Penumbra Block Explorer",
+  "network": "penumbra-019-erinome",
+  "icon": "https://penumbra.zone/static/penumbra-logo-136e1ce0eb303e0d6f8b349d5128d1cb.svg",
   "logo": {
-    "default": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/logo.svg?sanitize=true"
+    "default": "https://penumbra.zone/static/penumbra-logo-136e1ce0eb303e0d6f8b349d5128d1cb.svg"
   },
   "prefix": {
     "consensus": "desmosvalcons",
     "validator": "desmosvaloper",
-    "account": "desmos"
+    "account": "penumbra"
   },
   "genesis": {
     "time": "2021-07-13T08:00:00",
